@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng 19/11 - Nguyễn Công Huân</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff6b9d, #ff8fab, #ffb3c6, #ffccd5);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        
+        .heart-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            animation: pulse 2s infinite;
+        }
+        
+        .message-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 700px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 8px solid #ff6b9d;
+        }
+        
+        .love-message {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: #e91e63;
+            text-align: left;
+        }
+        
+        .highlight {
+            background: #ffeef5;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #e91e63;
+        }
+        
+        .special-date {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: #ff6b9d;
+            margin: 30px 0;
+        }
+        
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .countdown {
+            font-size: 1.4em;
+            background: rgba(232, 30, 99, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px auto;
+            max-width: 500px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(15deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @media (max-width: 768px) {
+            .heart-title { font-size: 2.2em; }
+            .message-box { padding: 25px; margin: 20px; }
+            .love-message { font-size: 1.1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <div class="container">
+        <h1 class="heart-title">💝 Chúc Mừng Ngày 19/11 💝</h1>
+        <h2 style="margin-bottom: 20px; color: #fff;">Gửi Nguyễn Công Huân</h2>
+        
+        <div class="message-box">
+            <div class="love-message">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <div style="font-size: 60px; animation: pulse 2s infinite;">❤️</div>
+                </div>
+                
+                <p><strong>Ê anh yêu!</strong></p>
+                <p>19/11 này em có đôi lời muốn nói thật lòng...</p>
+                
+                <div class="highlight">
+                    <p>Em biết em khó tính, em hay giận hờn vô cớ, em nhiều lúc làm anh phát điên lên được.</p>
+                    <p>Nhưng mà anh đã chọn yêu em rồi thì phải chịu đựng đến cùng nhé! 😤</p>
+                </div>
+                
+                <p><strong>EM CHÚC ANH:</strong></p>
+                <ul style="margin: 15px 0 15px 20px;">
+                    <li>Phải sống sót qua nhiều năm tháng "khủng bố" với em</li>
+                    <li>Tiếp tục làm ATM tình cảm và ví tiền của em</li>
+                    <li>Và quan trọng nhất: <strong>NHỚ KỸ EM LUÔN ĐÚNG, EM LUÔN ĐẸP NHẤT!</strong></li>
+                </ul>
+                
+                <div class="highlight">
+                    <p>Cảm ơn anh vì đã không bỏ chạy dù em là cơn ác mộng của anh! </p>
+                    <p>Yêu anh nhiều! Dù đôi khi muốn đánh anh 😾❤️</p>
+                </div>
+            </div>
+            
+            <div class="special-date">
+                19 • 11 • 2025
+            </div>
+        </div>
+        
+        <div class="countdown" id="countdown">
+            💝 Đang tính thời gian yêu nhau...
+        </div>
+        
+        <button onclick="createHearts()" style="
+            padding: 15px 30px; 
+            background: linear-gradient(45deg, #e91e63, #ff6b9d);
+            color: white; 
+            border: none; 
+            border-radius: 25px; 
+            cursor: pointer;
+            font-size: 1.1em;
+            margin: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        ">
+            💖 Bấm để thêm trái tim
+        </button>
+    </div>
+
+    <script>
+        // Hiệu ứng trái tim bay
+        function createHearts() {
+            const container = document.getElementById('heartsContainer');
+            const hearts = ['💖', '💝', '❤️', '💗', '💓', '💞', '💕', '💘'];
+            
+            for(let i = 0; i < 12; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.fontSize = (Math.random() * 25 + 20) + 'px';
+                    heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    
+                    container.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        if(heart.parentNode) heart.remove();
+                    }, 7000);
+                }, i * 150);
+            }
+        }
+
+        // Đếm thời gian yêu nhau
+        function startLoveCounter() {
+            const startDate = new Date('2024-02-10').getTime();
+            
+            setInterval(() => {
+                const now = new Date().getTime();
+                const distance = now - startDate;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('countdown').innerHTML = 
+                    `💝 Đã yêu nhau: ${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây 💝`;
+            }, 1000);
+        }
+
+        // Tự động tạo trái tim
+        function autoHearts() {
+            setInterval(createHearts, 4000);
+        }
+
+        // Khởi động tất cả hiệu ứng
+        window.onload = function() {
+            createHearts();
+            startLoveCounter();
+            autoHearts();
+        }
+
+        // Click để tạo trái tim
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.textContent = '💖';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '35px';
+            heart.style.animationDuration = '3s';
+            
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                if(heart.parentNode) heart.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
